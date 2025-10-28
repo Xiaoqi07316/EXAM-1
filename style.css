@@ -1,7 +1,315 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f3ec;
-  color: #333;
-  text-align: center;
-  margin: 50px;
+/* style.css — Willow Creek B&B single-page site */
+
+/* ===============================
+   CSS Variables (Theme)
+   =============================== */
+:root{
+  --cream: #FBF7F0;
+  --forest: #2F6B4B;
+  --wood: #8B5A2B;
+  --ink: #232323;
+  --stone: #6a6a6a;
+  --white: #ffffff;
+  --shadow: 0 6px 18px rgba(0,0,0,0.12);
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --container: clamp(280px, 90vw, 1120px);
 }
+
+/* ===============================
+   Base / Reset
+   =============================== */
+*,
+*::before,
+*::after{ box-sizing: border-box; }
+
+html{ scroll-behavior: auto; }
+
+body{
+  margin: 0;
+  color: var(--ink);
+  background: var(--cream);
+  font: 400 16px/1.6 "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+img{ max-width: 100%; height: auto; display: block; }
+a{ color: var(--forest); text-decoration: none; }
+a:hover{ text-decoration: underline; }
+
+h1,h2,h3{
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  margin: 0 0 .5rem;
+  color: var(--ink);
+}
+h1{ font-size: clamp(2rem, 3vw + 1.2rem, 3.25rem); line-height: 1.15; }
+h2{ font-size: clamp(1.5rem, 1.2vw + 1rem, 2.25rem); }
+h3{ font-size: clamp(1.2rem, .6vw + 1rem, 1.5rem); }
+
+.container{ width: var(--container); margin-inline: auto; padding-inline: 1rem; }
+.narrow{ max-width: 760px; margin-inline: auto; }
+
+/* Skip link */
+.skip-link{
+  position: absolute; left: -999px; top: auto;
+  background: var(--forest); color: var(--white);
+  padding: .5rem .75rem; border-radius: var(--radius-sm);
+}
+.skip-link:focus{ left: .5rem; top: .5rem; z-index: 1000; }
+
+/* ===============================
+   Header / Navigation
+   =============================== */
+.site-header{
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(251,247,240,0.9);
+  backdrop-filter: saturate(120%) blur(6px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.header-inner{
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 1rem;
+  padding: .75rem 0;
+}
+.logo a{
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700; letter-spacing: .3px;
+  color: var(--ink);
+  font-size: 1.25rem;
+}
+.logo span{ color: var(--forest); }
+
+.main-nav ul{
+  list-style: none; margin: 0; padding: 0;
+  display: flex; gap: 1rem;
+}
+.main-nav a{
+  font-weight: 600; color: var(--ink);
+  padding: .4rem .5rem; border-radius: 6px;
+}
+.main-nav a:hover{ background: rgba(47,107,75,.08); text-decoration: none; }
+
+.cta .btn{ white-space: nowrap; }
+
+/* ===============================
+   Buttons
+   =============================== */
+.btn{
+  display: inline-block;
+  border: 2px solid transparent;
+  padding: .7rem 1.1rem;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform .12s ease, box-shadow .12s ease, background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.btn-primary{
+  background: var(--forest);
+  color: var(--white);
+  box-shadow: var(--shadow);
+}
+.btn-primary:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
+.btn-light{
+  background: var(--white);
+  color: var(--forest);
+  border-color: var(--forest);
+}
+.btn-light:hover{ transform: translateY(-1px); }
+
+/* ===============================
+   Hero
+   =============================== */
+.hero{
+  position: relative;
+  color: var(--white);
+  background:
+    linear-gradient(180deg, rgba(35,35,35,.55), rgba(35,35,35,.35)),
+    url("/images/placeholder-hero.jpg") center/cover no-repeat;
+}
+.hero-inner{
+  padding: clamp(3rem, 8vw, 8rem) 0;
+  text-align: center;
+}
+.hero-title{ color: #fff; }
+.hero-tagline{
+  color: #f1f1f1;
+  font-size: clamp(1.1rem, .8vw + .9rem, 1.4rem);
+  margin: .5rem 0 .25rem;
+}
+.hero-subtitle{
+  color: #f7f7f7;
+  margin-bottom: 1.25rem;
+}
+
+/* ===============================
+   Sections
+   =============================== */
+.section{ padding: clamp(2.5rem, 5vw, 4rem) 0; }
+.section-title{
+  text-align: center;
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+}
+
+/* About */
+.section-about p{
+  margin: 0 0 1rem;
+  color: var(--stone);
+  font-size: 1.05rem;
+}
+
+/* Rooms */
+.section-rooms{
+  background: #fff;
+  border-top: 1px solid rgba(0,0,0,0.06);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+.cards{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+.card{
+  background: var(--cream);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+.card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+.card-media img{ width: 100%; height: 220px; object-fit: cover; }
+.card-body{ padding: 1rem 1.1rem 1.25rem; }
+.card-title{ margin-bottom: .5rem; }
+.amenities{
+  margin: 0 0 .75rem; padding-left: 1.25rem;
+}
+.amenities li{ margin: .25rem 0; color: var(--stone); }
+.rate{ font-size: 1.05rem; }
+
+/* Gallery */
+.section-gallery .gallery{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .75rem;
+}
+.section-gallery img{
+  border-radius: var(--radius-md);
+  width: 100%; height: 180px; object-fit: cover;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Testimonials */
+.section-testimonials .testimonials{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+.quote{
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-left: 6px solid var(--forest);
+  padding: 1rem 1rem 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+.quote p{ margin: 0 0 .5rem; }
+.quote footer{ color: var(--stone); }
+
+/* Contact */
+.section-contact .contact-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+.contact-form{
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+}
+.form-field{ margin-bottom: .85rem; }
+label{
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: .35rem;
+}
+input, textarea{
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 10px;
+  padding: .65rem .75rem;
+  font: inherit;
+  outline: none;
+  background: #fff;
+}
+input:focus, textarea:focus{
+  border-color: var(--forest);
+  box-shadow: 0 0 0 3px rgba(47,107,75,.15);
+}
+.form-note{
+  color: var(--stone);
+  font-size: .9rem;
+  margin: .25rem 0 1rem;
+}
+
+.contact-details{
+  background: var(--cream);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+}
+.contact-list{
+  list-style: none; margin: 0 0 1rem; padding: 0;
+}
+.contact-list li{ margin: .35rem 0; }
+.social-title{ margin: 0 0 .25rem; font-weight: 700; }
+.social ul{ list-style: none; padding: 0; margin: 0 0 .75rem; }
+.social li{ margin: .25rem 0; }
+.location-note{ color: var(--stone); }
+
+/* Footer */
+.site-footer{
+  border-top: 1px solid rgba(0,0,0,0.08);
+  background: #fff;
+}
+.footer-inner{
+  display: flex; gap: 1rem; align-items: center; justify-content: space-between;
+  padding: 1rem 0;
+}
+.back-to-top{
+  font-weight: 700;
+  color: var(--forest);
+}
+
+/* ===============================
+   Responsive
+   =============================== */
+
+/* ≥ 768px (tablets) */
+@media (min-width: 768px){
+  .header-inner{ grid-template-columns: auto 1fr auto; }
+  .cards{ grid-template-columns: repeat(2, 1fr); }
+  .section-gallery .gallery{ grid-template-columns: repeat(3, 1fr); }
+  .section-testimonials .testimonials{ grid-template-columns: repeat(2, 1fr); }
+  .section-contact .contact-grid{ grid-template-columns: 1fr 1fr; }
+}
+
+/* ≥ 1024px (desktops) */
+@media (min-width: 1024px){
+  .cards{ grid-template-columns: repeat(3, 1fr); }
+  .section-gallery .gallery{ grid-template-columns: repeat(5, 1fr); }
+  .section-testimonials .testimonials{ grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ===============================
+   Small Enhancements
+   =============================== */
+::selection{ background: rgba(47,107,75,.25); }

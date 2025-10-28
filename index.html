@@ -1,13 +1,247 @@
-<!DOCTYPE html>
+<!-- index.html — Willow Creek B&B single-page site -->
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Willow Creek Bed & Breakfast</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Willow Creek Bed & Breakfast</h1>
-    <p>Your Cozy Escape in the Mountains.</p>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Willow Creek Bed & Breakfast | Your Cozy Escape in the Mountains</title>
+  <meta name="description" content="Willow Creek Bed & Breakfast in Blue Ridge, GA — cozy rooms, homemade breakfast, nearby hiking, and an evening fire pit." />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Skip Link for Accessibility -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <div class="logo" aria-label="Willow Creek B and B logo">
+        <a href="#top">Willow Creek <span>B&amp;B</span></a>
+      </div>
+
+      <nav class="main-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#rooms">Rooms</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="cta">
+        <a class="btn btn-primary" href="#contact" aria-label="Book Now">Book Now</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" role="banner" aria-label="Scenic mountain hero">
+      <div class="hero-inner container">
+        <h1 class="hero-title">Willow Creek Bed &amp; Breakfast</h1>
+        <p class="hero-tagline">Your Cozy Escape in the Mountains</p>
+        <p class="hero-subtitle">Wake up to homemade breakfasts and peaceful mountain views.</p>
+        <a class="btn btn-light" href="#rooms" aria-label="View Rooms">View Rooms</a>
+      </div>
+      <!-- decorative background image via CSS -->
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section section-about" aria-labelledby="about-title">
+      <div class="container narrow">
+        <h2 id="about-title" class="section-title">About Willow Creek</h2>
+        <p>
+          Nestled among whispering pines and winding trails, Willow Creek Bed &amp; Breakfast offers the charm of a rustic mountain escape with the comfort of thoughtfully appointed rooms. Our mornings begin with a homemade breakfast featuring local ingredients, freshly brewed coffee, and the scent of warm pastries drifting through the lodge.
+        </p>
+        <p>
+          Spend your days exploring nearby hiking paths and scenic overlooks, then return to crackling firelight under a star-filled sky. Whether you are planning a romantic weekend or a quiet family retreat, our cozy spaces and warm hospitality make it easy to unwind and reconnect.
+        </p>
+      </div>
+    </section>
+
+    <!-- Rooms & Rates -->
+    <section id="rooms" class="section section-rooms" aria-labelledby="rooms-title">
+      <div class="container">
+        <h2 id="rooms-title" class="section-title">Rooms &amp; Rates</h2>
+
+        <div class="cards">
+          <!-- Garden Suite -->
+          <article class="card">
+            <figure class="card-media">
+              <img src="/images/rooms/garden-suite.jpg" alt="Garden Suite with king bed and balcony" />
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">Garden Suite</h3>
+              <ul class="amenities">
+                <li>King bed</li>
+                <li>Private balcony</li>
+                <li>Garden view</li>
+                <li>Ensuite bath</li>
+                <li>Breakfast included</li>
+              </ul>
+              <p class="rate"><strong>$145</strong> / night</p>
+            </div>
+          </article>
+
+          <!-- The Loft -->
+          <article class="card">
+            <figure class="card-media">
+              <img src="/images/rooms/loft.jpg" alt="Loft room with skylight and queen bed" />
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">The Loft</h3>
+              <ul class="amenities">
+                <li>Queen bed</li>
+                <li>Skylight</li>
+                <li>Reading nook</li>
+                <li>Complimentary tea &amp; coffee</li>
+              </ul>
+              <p class="rate"><strong>$120</strong> / night</p>
+            </div>
+          </article>
+
+          <!-- Creekside Room -->
+          <article class="card">
+            <figure class="card-media">
+              <img src="/images/rooms/creekside.jpg" alt="Creekside room overlooking the creek" />
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">Creekside Room</h3>
+              <ul class="amenities">
+                <li>Two double beds</li>
+                <li>Creek view</li>
+                <li>Patio</li>
+                <li>Fire-pit access</li>
+              </ul>
+              <p class="rate"><strong>$130</strong> / night</p>
+            </div>
+          </article>
+
+          <!-- Mountain View Cabin -->
+          <article class="card">
+            <figure class="card-media">
+              <img src="/images/rooms/mountain-cabin.jpg" alt="Cozy cabin with mountain views" />
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">Mountain View Cabin</h3>
+              <ul class="amenities">
+                <li>Private cabin</li>
+                <li>Wood stove</li>
+                <li>Kitchenette</li>
+                <li>Panoramic windows</li>
+              </ul>
+              <p class="rate"><strong>$175</strong> / night</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery (optional) -->
+    <section class="section section-gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <h2 id="gallery-title" class="section-title">Gallery</h2>
+        <div class="gallery">
+          <img src="/images/placeholder-01.jpg" alt="Cabin exterior at dusk" />
+          <img src="/images/placeholder-02.jpg" alt="Homemade breakfast spread" />
+          <img src="/images/placeholder-03.jpg" alt="Hiking trail among pines" />
+          <img src="/images/placeholder-04.jpg" alt="Cozy lounge with fireplace" />
+          <img src="/images/placeholder-05.jpg" alt="Mountain overlook view" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="reviews" class="section section-testimonials" aria-labelledby="reviews-title">
+      <div class="container narrow">
+        <h2 id="reviews-title" class="section-title">What Our Guests Say</h2>
+
+        <div class="testimonials">
+          <blockquote class="quote">
+            <p>“A peaceful retreat! We loved the homemade breakfast and the fire pit under the stars.”</p>
+            <footer>— Maya L., Asheville, NC</footer>
+          </blockquote>
+
+          <blockquote class="quote">
+            <p>“The Garden Suite balcony was perfect for morning coffee with mountain views.”</p>
+            <footer>— Daniel R., Atlanta, GA</footer>
+          </blockquote>
+
+          <blockquote class="quote">
+            <p>“Clean, cozy, and close to hiking. We’ll definitely be back!”</p>
+            <footer>— Priya &amp; Alex, Nashville, TN</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section section-contact" aria-labelledby="contact-title">
+      <div class="container">
+        <h2 id="contact-title" class="section-title">Get in Touch</h2>
+
+        <div class="contact-grid">
+          <!-- Form -->
+          <form class="contact-form" aria-describedby="contact-note">
+            <div class="form-field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your full name" />
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" />
+            </div>
+
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" placeholder="(xxx) xxx-xxxx" />
+            </div>
+
+            <div class="form-field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us about your dates and preferred room..."></textarea>
+            </div>
+
+            <p id="contact-note" class="form-note">* This is a demo form for design only (no submissions).</p>
+
+            <button class="btn btn-primary" type="button" aria-disabled="true">Send Message</button>
+          </form>
+
+          <!-- Details -->
+          <div class="contact-details">
+            <ul class="contact-list">
+              <li><strong>Email:</strong> <a href="mailto:info@willowcreekbnb.com">info@willowcreekbnb.com</a></li>
+              <li><strong>Phone:</strong> <a href="tel:17065552487">706-555-2487</a></li>
+              <li><strong>Address:</strong> 123 Mountain Trail Rd, Blue Ridge, GA</li>
+              <li><strong>Hours:</strong> Mon–Sun 8:00 AM – 9:00 PM</li>
+            </ul>
+
+            <div class="social">
+              <p class="social-title">Follow us</p>
+              <ul>
+                <li><a href="#" aria-label="Instagram @willowcreekbnb">Instagram @willowcreekbnb</a></li>
+                <li><a href="#" aria-label="Facebook WillowCreekBnB">Facebook WillowCreekBnB</a></li>
+              </ul>
+            </div>
+
+            <p class="location-note">Located in Blue Ridge, GA — we look forward to your stay!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2025 Willow Creek Bed &amp; Breakfast. All rights reserved.</p>
+      <a class="back-to-top" href="#top" aria-label="Back to top">Back to Top ↑</a>
+    </div>
+  </footer>
+</body>
 </html>
